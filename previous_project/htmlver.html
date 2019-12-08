@@ -254,11 +254,11 @@
                                         <div class="tab-content pt-2"  id="nav-tabContent">
                                             <div aria-labelledby="nav-manuak-tab" class="tab-pane fade show active m-t-15" id="nav-home"
                                                  role="tabpanel">
-                                                <button class="btn btn-primary" data-target="#market-type-manual" data-toggle="collapse" style="width: 100%" type="button">
+                                                <button class="btn btn-primary collapsed" data-target="#market-type-manual" data-toggle="collapse" style="width: 100%" type="button">
                                                   Market & Trade Type
                                                 </button>
 
-                                                <div class="collapse"  id="market-type-manual">
+                                                <div class="collapse show"  id="market-type-manual">
                                                     <div class="card card-body">
                                                         <div class="input-group m-b-25 row">
                                                             <div class="col-5 d-inline-block">
@@ -297,10 +297,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-primary" data-target="#trade-specification-manual" data-toggle="collapse" style="width: 100%" type="button">
+                                                <button class="btn btn-primary collapsed" data-target="#trade-specification-manual" data-toggle="collapse" style="width: 100%" type="button">
                                                     Trade Specification
                                                 </button>
-                                                <div class="collapse" id="trade-specification-manual">
+                                                <div class="collapse show" id="trade-specification-manual">
                                                 <div class="card card-body">
                                                 <div class="input-group m-b-25 row">
                                                     <div class="col-5">
@@ -403,11 +403,11 @@
                                             <div class="tab-pane fade m-t-15" id="nav-automatic"
                                                  role="tabpanel">
 
-                                                    <button class="btn btn-primary" data-target="#market-type-automatic" data-toggle="collapse" style="width: 100%" type="button">
+                                                    <button class="btn btn-primary collapsed" data-target="#market-type-automatic" data-toggle="collapse" style="width: 100%" type="button">
                                                         Market & Trade Type
                                                     </button>
 
-                                                    <div class="collapse"  id="market-type-automatic">
+                                                    <div class="collapse show"  id="market-type-automatic">
                                                         <div class="card card-body">
                                                             <div class="input-group m-b-25 row">
                                                                 <div class="col-5 d-inline-block">
@@ -447,11 +447,11 @@
                                                         </div>
                                                     </div>
 
-                                                    <button class="btn btn-primary" data-target="#tradeSpecification" data-toggle="collapse" style="width: 100%" type="button">
+                                                    <button class="btn btn-primary collapsed" data-target="#tradeSpecification" data-toggle="collapse" style="width: 100%" type="button">
                                                        Trade Specification
                                                     </button>
 
-                                                    <div class="collapse"  id="tradeSpecification">
+                                                    <div class="collapse show"  id="tradeSpecification">
                                                         <div class="card card-body">
 
                                                             <div class="input-group m-b-25 row">
@@ -542,7 +542,7 @@
                                                             </div>
                                                             <div class="tab-content">
                                                                 <button class="btn btn-light" data-target="#contract-1" data-toggle="collapse" style="width: 100%" type="button" aria-expanded="true">Odd Contract</button>
-                                                                <div class="collapse"  id="contract-1">
+                                                                <div class="collapse show"  id="contract-1">
                                                                     <div class="card card-body">
                                                                         <div class="input-group row m-r-0 m-b-25 placeholder-center m-l-0">
                                                                             <button type="button" class="btn btn-info">
@@ -570,7 +570,6 @@
                                                                                             <input class="form-control-modified w-100" id="conditionValue" placeholder="value" type="text" style="min-width: 70%;max-width: 70%;display: inline-block;">
                                                                                             <sup class="fa fa-times fa-lg" style="display: inline;"></sup>
                                                                                     </div>
-                                                                                    
                                                                                 </div>
                                                                                 <div class="row placeholder-center">
                                                                                     <label class="switch switch-text switch-primary switch-pill">
@@ -580,11 +579,33 @@
                                                                                     </label>
                                                                                 </div>
                                                                             </li>
+                                                                            <li>
+                                                                                <div class="input-group row m-r-0 m-l-0 m-b-25">
+                                                                                    <div class="col-auto d-inline-block p-l-5 p-r-5">
+                                                                                        <select class="form-control-modified fit-content m-auto" id="field-condition-trade-1" name="condition-trade-1">
+                                                                                            <option value="Asians">RSI</option>
+                                                                                            <option value="Up/Down">MACD</option>
+                                                                                            <option value="Rise/Fall Equal">SMA</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-auto d-inline-block p-l-10">
+                                                                                        <select class="form-control-modified w-100 m-r-0" id="field-condition-trade-1" name="condition-trade-1">
+                                                                                            <option value="Asians">≥</option>
+                                                                                            <option value="Up/Down">≤</option>
+                                                                                            <option value="Rise/Fall Equal">=</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-4 d-inline-block p-l-5 p-r-0">
+                                                                                            <input class="form-control-modified w-100" id="conditionValue" placeholder="value" type="text" style="min-width: 70%;max-width: 70%;display: inline-block;">
+                                                                                            <p class="fa fa fa-trash-o fa-lg" style="display: inline;"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
                                                                         </ol>
                                                                     </div>
                                                                 </div>
                                                                 <button class="btn btn-light" data-target="#contract-2" data-toggle="collapse" style="width: 100%" type="button" aria-expanded="true">Even Contract</button>
-                                                                <div class="collapse"  id="contract-2">
+                                                                <div class="collapse show"  id="contract-2">
                                                                     <div class="card card-body">
                                                                     </div>
                                                                 </div>
@@ -593,8 +614,8 @@
                                                     </div>
 
                                                 <div class="tab-content">
-                                                    <button class="btn btn-primary" data-target="#stop-loss" data-toggle="collapse" style="width: 100%" type="button" aria-expanded="true">Stop Loss and Take Profit</button>
-                                                    <div class="collapse"  id="stop-loss">
+                                                    <button class="btn btn-primary collapsed" data-target="#stop-loss" data-toggle="collapse" style="width: 100%" type="button" aria-expanded="true">Stop Loss and Take Profit</button>
+                                                    <div class="collapse show"  id="stop-loss">
                                                         <div class="card card-body">
                                                             <div class="row m-b-15">
                                                                     <div class="col-auto">
