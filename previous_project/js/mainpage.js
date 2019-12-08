@@ -77,29 +77,29 @@ let tradingConfiguration = (function () {
                 value: symbolOnly[count],
             });
         }
-        marketList = new Awesomplete('input#market', {
-            minChars: 1,
-            maxItems: 100,
-            autoFirst: true,
-            list: listValue,
-            // insert label instead of value into the input.
-            replace(suggestion) {
-                this.input.value = suggestion.label;
-            },
-        });
+        // marketList = new Awesomplete('input#market', {
+        //     minChars: 1,
+        //     maxItems: 100,
+        //     autoFirst: true,
+        //     list: listValue,
+        //     // insert label instead of value into the input.
+        //     replace(suggestion) {
+        //         this.input.value = suggestion.label;
+        //     },
+        // });
 
-        Awesomplete.$('#market-drop').addEventListener('click', () => {
-            if (marketList.ul.childNodes.length === 0) {
-                marketList.minChars = 0;
-                marketList.evaluate();
-            } else if (marketList.ul.hasAttribute('hidden')) {
-                marketList.open();
-            } else {
-                marketList.close();
-            }
-        });
-        $('input#market').val(localStorage.getItem('market'));
-        $("input#contract").val(localStorage.getItem('contractType'));
+        // Awesomplete.$('#market-drop').addEventListener('click', () => {
+        //     if (marketList.ul.childNodes.length === 0) {
+        //         marketList.minChars = 0;
+        //         marketList.evaluate();
+        //     } else if (marketList.ul.hasAttribute('hidden')) {
+        //         marketList.open();
+        //     } else {
+        //         marketList.close();
+        //     }
+        // });
+        // $('input#market').val(localStorage.getItem('market'));
+        // $("input#contract").val(localStorage.getItem('contractType'));
     };
 
     let recreateWebSocket = function () {
@@ -217,8 +217,9 @@ let tickChart = (function () {
 
 
     let getLatestTick = function (location) {
+        console.log(location);
         tickStream.send(JSON.stringify({
-            "ticks_history": marketList._list[location].value,
+            "ticks_history": "R_50",
             "end": "latest",
             "style": "ticks",
             "count": 50,
@@ -267,6 +268,15 @@ let tickChart = (function () {
     };
     let recreateWebSocket = function () {
         tickStream = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+        tickStream.onopen = function (msg) {
+            tickStream.send(JSON.stringify({
+                "ticks_history": "R_50",
+                "end": "latest",
+                "style": "ticks",
+                "count": 50,
+                "subscribe": 1
+            }));
+        }
         tickStream.onmessage = function (msg) {
             const data = JSON.parse(msg.data);
             const msgType = data.msg_type;
@@ -400,9 +410,8 @@ let tickChart = (function () {
 //Initialize first
 tickChart.createChart();
 tickChart.recreateWebSocket();
-tickChart.setMarketButton();
-tickChart.setContractTypeButton();
-
+// tickChart.setMarketButton();
+// tickChart.setContractTypeButton();
 // });
 
 // $( document ).ready(function() {
