@@ -1,0 +1,216 @@
+
+.modal{
+    /*background-color: #16275B;*/
+    color: #6F6866;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.modal-header{
+    border-bottom: 0px;
+    display: block;
+}
+
+.modal-footer{
+    border-top: 0px;
+}
+
+.modal-footer btn{
+    padding: 1rem .75rem;
+}
+
+.modal-content{
+    background-color: #788585;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.modal-title{
+    width: 100%;
+    font-size:30px;
+    font-family: Lato;
+    color: white;
+}
+
+.modal-center{
+    text-align: center;
+    /*display: block;*/
+}
+.placeholder-center{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.button-center{
+    width:130px;
+}
+
+.modal button{
+    padding: .5rem .75rem;
+    margin: 0px 5px 0px 5px;
+}
+.modal-footer button{
+    padding: 0.5rem .75rem;
+}
+
+#apiTokenField{
+    background: none;
+    padding: 2px 2px 1px;
+    border-width: 0 0 1px;
+    color: white;
+}
+
+#apiTokenField::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightslategrey;
+    opacity: 1; /* Firefox */
+}
+
+#apiTokenField::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightslategrey;
+}
+
+#apiTokenField::-ms-input-placeholder { /* Microsoft Edge */
+    color: lightslategrey;
+}
+
+#tickHistory{
+    list-style-type: none;
+    font-size: 13px;
+}
+
+#tickHistory .upValue{
+     color: #63ADF2;
+ }
+
+#tickHistory .downValue{
+    color: #FA824C;
+}
+@media (min-width: 768px){
+    .au-card{
+        min-height: 430px;
+    }
+}
+@media (max-width: 768px){
+    .au-card{
+        height: 430px;
+    }
+    #myChart{
+        height:100%;
+    }
+}
+
+#trade-selection{
+    padding: 0px;
+}
+
+.row.content {
+    flex: 1 1 auto;
+    display: flex; /* new */
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    padding:1em;
+    height:70vh;
+    min-height: 0;
+    overflow:hidden;
+}
+
+.frame {
+    flex: 1 1 auto;
+    border: 0;
+}
+#contract-category{
+    overflow-y: auto;
+}
+.au-card-inner{
+    min-height: 470px;
+}
+
+@media (max-width: 768px) {
+    .tick-mobile {
+        height: 480px;
+    }
+    TradeFooter{
+        position: fixed;
+        bottom: 0px;
+        z-index: 101;
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        background: #eee;
+    }
+    .status{
+        bottom:36px;
+    }
+    .decide-trade{
+        width: 100%;
+        margin: 0px;
+        border-radius: 0px;
+        border: transparent;
+    }
+    #red-trade{
+        background: #D81E1E;
+    }
+    #green-trade{
+        background: #79E55E;
+    }
+}
+@media (min-width: 768px) {
+    TradeFooter {
+        display: none;
+    }
+}
+
+
+.trade-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.au-card-modified {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    /*padding-right: 35px;*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    -webkit-flex: 0 0 300px; /* Safari 6.1+ */
+    -ms-flex:  0 0 300px; /* IE 10 */
+    flex:  0 0 300px;
+}
+
+.form-range-control {
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.form-range-control input[type="range"] {
+    -webkit-appearance: none;
+    background-color: darkgrey;
+    height: 3px;
+    border-radius: 1px;
+    width:100%;
+}
+
+.form-range-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #afe0fc;
+    border-radius: 50%;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
